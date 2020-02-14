@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mealy/widgets/category_screen.dart';
+import './widgets/meal_details_screen.dart';
+import './widgets/category_meals_screen.dart';
+import './widgets/category_screen.dart';
+import './widgets/tabs_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +28,12 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'RobotoCondensed',
                     fontWeight: FontWeight.bold),
               )),
-      home: CategoryScreen(),
+      // home: CategoryScreen(),
+      routes: {
+        '/': (ctx) => TabScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        MealDetailsScreen.routeName: (ctx) => MealDetailsScreen(),
+      },
     );
   }
 }
